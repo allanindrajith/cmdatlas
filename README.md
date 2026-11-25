@@ -7,19 +7,17 @@
 [![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-allanidrajith-FFDD00?style=flat-square&logo=buy-me-a-coffee&logoColor=000000)](https://www.buymeacoffee.com/allanidrajith)
 [![Live Web Reference](https://img.shields.io/badge/Web%20Reference-itsallan.me%2Fcmdatlas-0B5FFF?style=flat-square)](https://itsallan.me/cmdatlas/)
 
-A structured, community-maintainable reference of **200 Verified core commands** plus a **33,059-command Community collection** across Windows, macOS, Linux, Raspberry Pi OS, Docker, and Cross-Platform environments.
+A structured, open-source reference of **200 Verified core CLI commands** plus a **33,059-command Community collection** across Windows, macOS, Linux, Raspberry Pi OS, Docker, and Cross-Platform environments.
 
-Built for terminal users, system administrators, developers, and homelab operators who want clean Markdown cheat sheets alongside machine-readable JSON and CSV datasets.
+Built for terminal users, system administrators, developers, and homelab operators who want clean Markdown cheat sheets alongside machine-readable JSON and CSV datasets — with transparent verification labels, risk flags, and placeholder safety.
 
-> **Two-Tier Verification & Attribution Notice**
-> - **Verified core (200 commands):** `data/commands.json` and `data/commands.csv`. The initial 200-command seed dataset was compiled from a spreadsheet attributed to **technologybrief.** (Updated October 2026). Command syntax and CLI flags are factual and not copyrightable, **however verbatim prose descriptions may be subject to the original author's rights**.
-> - **Community collection (33,059 commands):** `data/community/*.json` (split by platform: `windows`, `macos`, `linux`, `raspberry-pi`, `docker`, `cross-platform`). Community rows are never labeled as part of the Verified core. Every row carries an explicit `publicLabel` (`Tested (Linux/Docker sandbox)` [434], `Source-verified (official docs)` [180], `Community-sourced (not tested)` [32,419], or `Unverified (Reddit post)` [26]), `sourceUrl`, `license`, `riskFlag`, and `readyToRun`.
-> - **Community Licences & Credits:**
->   - [tldr-pages](https://github.com/tldr-pages/tldr) contributors — [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) (32,272 rows; reformatted to CmdAtlas schema, categorized, risk-flagged, and placeholder-tagged).
->   - [trimstray/the-book-of-secret-knowledge](https://github.com/trimstray/the-book-of-secret-knowledge) — MIT License (468 rows).
->   - Official vendor documentation (293 rows) and Reddit posts (26 rows) — syntax only with paraphrased descriptions and per-row `sourceUrl`.
+## Two-Tier Architecture
 
-## Dataset Summary
+CmdAtlas keeps curated and community-sourced datasets strictly separate. Community rows are never presented as Verified core.
+
+### Tier 1 — Verified Core (200 commands)
+
+Curated handbook with examples, install notes, Markdown sheets, and downloadable PDFs (`data/commands.json` + `data/commands.csv`).
 
 | Platform Group | Commands | Markdown Sheet |
 | :--- | :---: | :--- |
@@ -30,47 +28,96 @@ Built for terminal users, system administrators, developers, and homelab operato
 | **Raspberry Pi OS** (vcgencmd, rpicam, GPIO) | 15 | [`commands/raspberry-pi.md`](commands/raspberry-pi.md) |
 | **Total** | **200** | **168 built-in (84%) / 32 installable (16%)** |
 
+### Tier 2 — Community Collection (33,059 commands)
+
+Split into 6 lazy-loaded per-platform JSON files under `data/community/` (plus `data/community/index.json`).
+
+| Platform File | Commands | Risky (`CAUTION` / `DUAL-USE`) | Has Placeholders |
+| :--- | ---: | ---: | ---: |
+| [`data/community/windows.json`](data/community/windows.json) *(incl. 64 DOS legacy)* | 1,414 | 67 | 882 |
+| [`data/community/macos.json`](data/community/macos.json) | 1,052 | 16 | 550 |
+| [`data/community/linux.json`](data/community/linux.json) | 9,041 | 152 | 6,357 |
+| [`data/community/raspberry-pi.json`](data/community/raspberry-pi.json) | 88 | 1 | 20 |
+| [`data/community/docker.json`](data/community/docker.json) | 400 | 13 | 216 |
+| [`data/community/cross-platform.json`](data/community/cross-platform.json) | 21,064 | 201 | 15,929 |
+| **Total** | **33,059** | **450** | **23,954** |
+
+#### Public Labels (exact strings used on every community row)
+
+| Public Label | Rows | Meaning |
+| :--- | ---: | :--- |
+| `Tested (Linux/Docker sandbox)` | 434 | Executed read-only in a Linux sandbox (L3, 36 rows) or binary + all flags checked against local `--help` (L2, 398 rows). |
+| `Source-verified (official docs)` | 180 | Command syntax from official vendor documentation with paraphrased descriptions and source links. |
+| `Community-sourced (not tested)` | 32,419 | Imported from open-source community repositories (not executed in a sandbox). |
+| `Unverified (Reddit post)` | 26 | User-generated commands from public Reddit threads; unverified by definition. |
+
+> **Platform testing note:** Only 434 rows were tested in a Linux/Docker sandbox. No Windows, macOS, or Raspberry Pi hardware was available during automated testing. Commands containing `{{placeholders}}` cannot run as-is and were not executed.
+
 ## Repository Structure
 
 ```text
 .
-├── commands/                     # Human-readable Markdown cheat sheets by OS
+├── commands/                     # Human-readable Markdown cheat sheets (Verified core)
 │   ├── windows.md
 │   ├── macos.md
 │   ├── linux.md
 │   ├── raspberry-pi.md
 │   └── docker-cross-platform.md
-├── data/                         # Machine-readable datasets
-│   ├── commands.json             # Full structured schema with risk & admin flags
-│   └── commands.csv              # Flat CSV for spreadsheets & scripts
+├── data/
+│   ├── commands.json             # Verified core (200 commands)
+│   ├── commands.csv              # Verified core CSV
+│   └── community/                # Community collection (33,059 commands, split by platform)
+│       ├── index.json            # Per-platform and per-label manifest
+│       ├── windows.json
+│       ├── macos.json
+│       ├── linux.json
+│       ├── raspberry-pi.json
+│       ├── docker.json
+│       └── cross-platform.json
 ├── scripts/
-│   └── validate.py               # Schema, duplicate & parity validator (stdlib only)
+│   ├── validate.py               # Validates Verified core + all 6 Community JSON files (stdlib only)
+│   └── import_community.py       # Converts audited XLSX ("All Commands") to split JSON files
 ├── .github/workflows/
 │   └── validate.yml              # CI validation on push and pull requests
 ├── CONTRIBUTING.md
 └── LICENSE
 ```
 
-## Metadata Flags
+## Schema & Metadata Flags
 
-Every entry in `data/commands.json` and `data/commands.csv` includes:
-
+### Verified Core (`data/commands.json`)
 - **`builtIn`** (`true` / `false`): Whether the command ships out of the box on the target OS.
 - **`requiresAdmin`** (`true` / `false`): Flags commands requiring `sudo` or an elevated Administrator prompt (37 of 200 commands).
-- **`riskLevel`**:
-  - `safe` (171): Read-only inspection or non-destructive utility.
-  - `caution` (28): Modifies system state, permissions, processes, services, or deletes data/logs/images.
-  - `deprecated` (1): `wmic diskdrive` (removed in Windows 11 24H2+; use `Get-PhysicalDisk`).
+- **`riskLevel`**: `safe` (171), `caution` (28), or `deprecated` (1).
+
+### Community Collection (`data/community/*.json`)
+Retains the core schema fields (`id`, `group`, `groupLabel`, `command`, `summary`, `example`, `platform`, `category`, `install`, `builtIn`, `requiresAdmin`, `riskLevel`) and adds:
+- **`publicLabel`**: Exact verification badge string (one of the 4 labels above).
+- **`riskFlag`**: Raw risk annotation (`Needs sudo/admin`, `CAUTION: destructive or disruptive`, `DUAL-USE: security/pentest tool`, or empty).
+- **`sourceUrl`**: Direct link to the upstream source page/file for that command.
+- **`license`**: Upstream licence / attribution string preserved per row.
+- **`readyToRun`**: `"Yes"` or `"No - has {{placeholders}}"` (commands starting with `"No"` have highlighted placeholders and require confirmation before copying on the web app).
 
 ## Using the Data Programmatically
 
 ```bash
-# Validate dataset integrity locally
+# Validate Verified core + all 6 Community platform JSON files
 python3 scripts/validate.py
 
-# Filter Linux networking commands with jq
+# Filter Verified core Linux networking commands
 jq '.[] | select(.group == "linux" and .category == "Networking") | {command, summary}' data/commands.json
+
+# Filter sandbox-tested Docker commands in the Community collection
+jq '.[] | select(.publicLabel == "Tested (Linux/Docker sandbox)") | {id, command, summary}' data/community/docker.json
 ```
+
+## Attribution & Licences
+
+- **tldr-pages** ([github.com/tldr-pages/tldr](https://github.com/tldr-pages/tldr)): 32,272 community rows derived from tldr-pages contributors under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Changes made: converted to CmdAtlas per-platform JSON schema, grouped by platform/tool, annotated with risk flags, placeholder flags, and public labels, with source links preserved.
+- **trimstray/the-book-of-secret-knowledge** ([github.com/trimstray/the-book-of-secret-knowledge](https://github.com/trimstray/the-book-of-secret-knowledge)): 468 community rows under the **MIT License** (Copyright © 2018-present trimstray and contributors).
+- **Official vendor documentation** (Raspberry Pi, Docker, Homebrew, Microsoft Learn): 293 rows — command syntax only with paraphrased descriptions and per-row `sourceUrl`.
+- **Reddit** (user-generated content): 26 rows — commands only with paraphrased descriptions, per-row `sourceUrl`, and `Unverified (Reddit post)` label.
+- **Verified core seed notice**: The initial 200-command seed dataset was compiled from a spreadsheet attributed to **technologybrief.** (Updated October 2026). Command syntax and CLI flags are factual and not copyrightable, however verbatim prose descriptions may be subject to the original author's rights.
 
 ## Contributing
 

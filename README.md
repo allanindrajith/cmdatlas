@@ -1,5 +1,8 @@
 # CmdAtlas
 
+[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-allanidrajith-FFDD00?style=flat-square&logo=buy-me-a-coffee&logoColor=000000)](https://www.buymeacoffee.com/allanidrajith)
+[![Live Web Reference](https://img.shields.io/badge/Web%20Reference-itsallan.me%2Fcmdatlas-0B5FFF?style=flat-square)](https://itsallan.me/cmdatlas/)
+
 A structured, community-maintainable reference of **200 verified command-line tools and shortcuts** across Windows, macOS, Linux, Raspberry Pi OS, and Docker/Cross-Platform environments.
 
 Built for terminal users, system administrators, developers, and homelab operators who want clean Markdown cheat sheets alongside machine-readable JSON and CSV datasets.
@@ -63,3 +66,9 @@ jq '.[] | select(.group == "linux" and .category == "Networking") | {command, su
 ## Contributing
 
 See [`CONTRIBUTING.md`](CONTRIBUTING.md) for schema rules and how to submit new commands or corrections via Pull Request.
+
+## Support
+
+If CmdAtlas saved you time, you can support the project here:
+
+<a href="https://www.buymeacoffee.com/allanidrajith" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" height="45"></a>

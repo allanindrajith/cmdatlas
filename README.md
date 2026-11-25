@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/mascot.png" alt="CmdAtlas Mascot" width="96">
+</p>
+
 # CmdAtlas
 
 [![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-allanidrajith-FFDD00?style=flat-square&logo=buy-me-a-coffee&logoColor=000000)](https://www.buymeacoffee.com/allanidrajith)

@@ -7,12 +7,17 @@
 [![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-allanidrajith-FFDD00?style=flat-square&logo=buy-me-a-coffee&logoColor=000000)](https://www.buymeacoffee.com/allanidrajith)
 [![Live Web Reference](https://img.shields.io/badge/Web%20Reference-itsallan.me%2Fcmdatlas-0B5FFF?style=flat-square)](https://itsallan.me/cmdatlas/)
 
-A structured, community-maintainable reference of **200 verified command-line tools and shortcuts** across Windows, macOS, Linux, Raspberry Pi OS, and Docker/Cross-Platform environments.
+A structured, community-maintainable reference of **200 Verified core commands** plus a **33,059-command Community collection** across Windows, macOS, Linux, Raspberry Pi OS, Docker, and Cross-Platform environments.
 
 Built for terminal users, system administrators, developers, and homelab operators who want clean Markdown cheat sheets alongside machine-readable JSON and CSV datasets.
 
-> **Important Attribution & Licensing Notice**
-> The initial 200-command seed dataset was compiled from a spreadsheet attributed to **technologybrief.** (Updated October 2026). Command syntax and CLI flags are factual and not copyrightable, **however verbatim prose descriptions may be subject to the original author's rights**. Before publishing this repository publicly under an open-source license, either obtain permission/confirm the upstream license or rewrite the `summary` field in your own words.
+> **Two-Tier Verification & Attribution Notice**
+> - **Verified core (200 commands):** `data/commands.json` and `data/commands.csv`. The initial 200-command seed dataset was compiled from a spreadsheet attributed to **technologybrief.** (Updated October 2026). Command syntax and CLI flags are factual and not copyrightable, **however verbatim prose descriptions may be subject to the original author's rights**.
+> - **Community collection (33,059 commands):** `data/community/*.json` (split by platform: `windows`, `macos`, `linux`, `raspberry-pi`, `docker`, `cross-platform`). Community rows are never labeled as part of the Verified core. Every row carries an explicit `publicLabel` (`Tested (Linux/Docker sandbox)` [434], `Source-verified (official docs)` [180], `Community-sourced (not tested)` [32,419], or `Unverified (Reddit post)` [26]), `sourceUrl`, `license`, `riskFlag`, and `readyToRun`.
+> - **Community Licences & Credits:**
+>   - [tldr-pages](https://github.com/tldr-pages/tldr) contributors — [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) (32,272 rows; reformatted to CmdAtlas schema, categorized, risk-flagged, and placeholder-tagged).
+>   - [trimstray/the-book-of-secret-knowledge](https://github.com/trimstray/the-book-of-secret-knowledge) — MIT License (468 rows).
+>   - Official vendor documentation (293 rows) and Reddit posts (26 rows) — syntax only with paraphrased descriptions and per-row `sourceUrl`.
 
 ## Dataset Summary
 

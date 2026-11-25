@@ -1,0 +1,76 @@
+{
+  "total": 33059,
+  "labels": {
+    "Community-sourced (not tested)": 32419,
+    "Tested (Linux/Docker sandbox)": 434,
+    "Source-verified (official docs)": 180,
+    "Unverified (Reddit post)": 26
+  },
+  "platforms": [
+    {
+      "slug": "windows",
+      "label": "Windows",
+      "file": "windows.json",
+      "count": 1414,
+      "labels": {
+        "Community-sourced (not tested)": 1312,
+        "Source-verified (official docs)": 82,
+        "Unverified (Reddit post)": 20
+      }
+    },
+    {
+      "slug": "macos",
+      "label": "macOS",
+      "file": "macos.json",
+      "count": 1052,
+      "labels": {
+        "Community-sourced (not tested)": 1009,
+        "Source-verified (official docs)": 40,
+        "Unverified (Reddit post)": 3
+      }
+    },
+    {
+      "slug": "linux",
+      "label": "Linux",
+      "file": "linux.json",
+      "count": 9041,
+      "labels": {
+        "Community-sourced (not tested)": 8924,
+        "Tested (Linux/Docker sandbox)": 116,
+        "Unverified (Reddit post)": 1
+      }
+    },
+    {
+      "slug": "raspberry-pi",
+      "label": "Raspberry Pi",
+      "file": "raspberry-pi.json",
+      "count": 88,
+      "labels": {
+        "Community-sourced (not tested)": 26,
+        "Source-verified (official docs)": 58,
+        "Tested (Linux/Docker sandbox)": 2,
+        "Unverified (Reddit post)": 2
+      }
+    },
+    {
+      "slug": "docker",
+      "label": "Docker",
+      "file": "docker.json",
+      "count": 400,
+      "labels": {
+        "Tested (Linux/Docker sandbox)": 160,
+        "Community-sourced (not tested)": 240
+      }
+    },
+    {
+      "slug": "cross-platform",
+      "label": "Cross-Platform",
+      "file": "cross-platform.json",
+      "count": 21064,
+      "labels": {
+        "Community-sourced (not tested)": 20908,
+        "Tested (Linux/Docker sandbox)": 156
+      }
+    }
+  ]
+}

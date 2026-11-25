@@ -1,0 +1,490 @@
+{
+  "total": 6005,
+  "toolCount": 21,
+  "dateChecked": "2026-11-25",
+  "notice": "Most AI CLI rows come from official docs or source and have not been run. Tools change monthly; check the date on each page.",
+  "riskCount": 407,
+  "labels": {
+    "Tested (installed CLI --help, Linux sandbox)": 1998,
+    "Tested (ran --help, Linux sandbox)": 512,
+    "Source-verified (official docs)": 3455,
+    "Source-verified (official source code)": 36,
+    "Community-sourced (not tested)": 4
+  },
+  "types": {
+    "Flag / option": 3205,
+    "Shell command": 2172,
+    "In-app slash command": 617,
+    "Install": 11
+  },
+  "hiddenDescriptions": {
+    "needsRewording": 760,
+    "missing": 61
+  },
+  "tools": [
+    {
+      "name": "Aider",
+      "slug": "aider",
+      "command": "aider",
+      "file": "aider.json",
+      "count": 174,
+      "coverageRows": 174,
+      "types": {
+        "In-app slash command": 43,
+        "Flag / option": 131
+      },
+      "labels": {
+        "Source-verified (official docs)": 174
+      },
+      "riskCount": 1,
+      "hiddenDescriptions": 0,
+      "method": "Official repo docs (commands.md + options.md). pip install failed on Python 3.13 so not run",
+      "version": "docs snapshot 2026-05-22",
+      "note": "",
+      "dateChecked": "2026-11-25"
+    },
+    {
+      "name": "Antigravity CLI",
+      "slug": "antigravity-cli",
+      "command": "agy",
+      "file": "antigravity-cli.json",
+      "count": 72,
+      "coverageRows": 72,
+      "types": {
+        "In-app slash command": 48,
+        "Flag / option": 21,
+        "Install": 1,
+        "Shell command": 2
+      },
+      "labels": {
+        "Source-verified (official docs)": 69,
+        "Community-sourced (not tested)": 3
+      },
+      "riskCount": 3,
+      "hiddenDescriptions": 72,
+      "method": "Official docs reference page (slash commands + flags). Note: Antigravity also ships an IDE",
+      "version": "web docs 2026-11-25",
+      "note": "",
+      "dateChecked": "2026-11-25"
+    },
+    {
+      "name": "Claude Code",
+      "slug": "claude-code",
+      "command": "claude",
+      "file": "claude-code.json",
+      "count": 245,
+      "coverageRows": 245,
+      "types": {
+        "Shell command": 36,
+        "Flag / option": 82,
+        "In-app slash command": 127
+      },
+      "labels": {
+        "Source-verified (official docs)": 245
+      },
+      "riskCount": 11,
+      "hiddenDescriptions": 245,
+      "method": "Official web docs (cli-reference + commands)",
+      "version": "web docs 2026-11-25",
+      "note": "",
+      "dateChecked": "2026-11-25"
+    },
+    {
+      "name": "Codex CLI",
+      "slug": "codex-cli",
+      "command": "codex",
+      "file": "codex-cli.json",
+      "count": 176,
+      "coverageRows": 176,
+      "types": {
+        "Shell command": 33,
+        "Flag / option": 78,
+        "In-app slash command": 65
+      },
+      "labels": {
+        "Source-verified (official source code)": 26,
+        "Source-verified (official docs)": 150
+      },
+      "riskCount": 7,
+      "hiddenDescriptions": 150,
+      "method": "Official source (clap subcommands) + official docs (slash commands, flags)",
+      "version": "docs snapshot 2026-11-25",
+      "note": "",
+      "dateChecked": "2026-11-25"
+    },
+    {
+      "name": "Cursor CLI",
+      "slug": "cursor-cli",
+      "command": "agent",
+      "file": "cursor-cli.json",
+      "count": 61,
+      "coverageRows": 61,
+      "types": {
+        "Flag / option": 23,
+        "Shell command": 1,
+        "In-app slash command": 36,
+        "Install": 1
+      },
+      "labels": {
+        "Source-verified (official docs)": 61
+      },
+      "riskCount": 5,
+      "hiddenDescriptions": 61,
+      "method": "Official web docs (parameters + slash-commands)",
+      "version": "web docs 2026-11-25",
+      "note": "",
+      "dateChecked": "2026-11-25"
+    },
+    {
+      "name": "DeepSeek Harness",
+      "slug": "deepseek-harness",
+      "command": "dsh",
+      "file": "deepseek-harness.json",
+      "count": 27,
+      "coverageRows": 27,
+      "types": {
+        "Shell command": 8,
+        "Flag / option": 19
+      },
+      "labels": {
+        "Source-verified (official docs)": 27
+      },
+      "riskCount": 0,
+      "hiddenDescriptions": 0,
+      "method": "Official repo docs (docs/cli-help.md, generated from real CLI help)",
+      "version": "docs snapshot 2026-11-22",
+      "note": "Developer preview: commands may change",
+      "dateChecked": "2026-11-25"
+    },
+    {
+      "name": "Gemini CLI",
+      "slug": "gemini-cli",
+      "command": "gemini",
+      "file": "gemini-cli.json",
+      "count": 70,
+      "coverageRows": 70,
+      "types": {
+        "Shell command": 38,
+        "In-app slash command": 9,
+        "Flag / option": 23
+      },
+      "labels": {
+        "Source-verified (official docs)": 70
+      },
+      "riskCount": 5,
+      "hiddenDescriptions": 0,
+      "method": "Official repo docs (cli-reference.md)",
+      "version": "docs snapshot 2026-11-24",
+      "note": "Legacy: being replaced by Antigravity CLI (agy)",
+      "dateChecked": "2026-11-25"
+    },
+    {
+      "name": "GitHub Copilot CLI",
+      "slug": "github-copilot-cli",
+      "command": "copilot",
+      "file": "github-copilot-cli.json",
+      "count": 233,
+      "coverageRows": 233,
+      "types": {
+        "Shell command": 28,
+        "Flag / option": 104,
+        "In-app slash command": 100,
+        "Install": 1
+      },
+      "labels": {
+        "Source-verified (official docs)": 233
+      },
+      "riskCount": 13,
+      "hiddenDescriptions": 232,
+      "method": "Official GitHub docs reference + README",
+      "version": "web docs 2026-11-25",
+      "note": "",
+      "dateChecked": "2026-11-25"
+    },
+    {
+      "name": "Hermes Agent (Nous Research)",
+      "slug": "hermes-agent",
+      "command": "hermes",
+      "file": "hermes-agent.json",
+      "count": 785,
+      "coverageRows": 785,
+      "types": {
+        "Flag / option": 520,
+        "Shell command": 264,
+        "Install": 1
+      },
+      "labels": {
+        "Tested (installed CLI --help, Linux sandbox)": 520,
+        "Tested (ran --help, Linux sandbox)": 264,
+        "Source-verified (official docs)": 1
+      },
+      "riskCount": 88,
+      "hiddenDescriptions": 22,
+      "method": "Installed from PyPI and ran --help recursively",
+      "version": "Hermes Agent v0.19.0 (2026.7.20)",
+      "note": "",
+      "dateChecked": "2026-11-25"
+    },
+    {
+      "name": "Hugging Face CLI (hf)",
+      "slug": "huggingface-cli",
+      "command": "hf",
+      "file": "huggingface-cli.json",
+      "count": 1417,
+      "coverageRows": 1417,
+      "types": {
+        "Flag / option": 1234,
+        "Shell command": 182,
+        "Install": 1
+      },
+      "labels": {
+        "Tested (installed CLI --help, Linux sandbox)": 1234,
+        "Tested (ran --help, Linux sandbox)": 182,
+        "Source-verified (official docs)": 1
+      },
+      "riskCount": 169,
+      "hiddenDescriptions": 4,
+      "method": "Installed from PyPI and ran --help recursively",
+      "version": "2.4.0",
+      "note": "",
+      "dateChecked": "2026-11-25"
+    },
+    {
+      "name": "Kimi Code CLI",
+      "slug": "kimi-code-cli",
+      "command": "kimi",
+      "file": "kimi-code-cli.json",
+      "count": 99,
+      "coverageRows": 99,
+      "types": {
+        "Flag / option": 32,
+        "Shell command": 3,
+        "In-app slash command": 62,
+        "Install": 2
+      },
+      "labels": {
+        "Source-verified (official docs)": 99
+      },
+      "riskCount": 4,
+      "hiddenDescriptions": 0,
+      "method": "Official repo docs (reference/*)",
+      "version": "docs snapshot 2026-11-25",
+      "note": "Old Python \"kimi-cli\" from PyPI is archived and prints a notice; Kimi Code CLI is the current one",
+      "dateChecked": "2026-11-25"
+    },
+    {
+      "name": "Mistral Vibe",
+      "slug": "mistral-vibe",
+      "command": "vibe",
+      "file": "mistral-vibe.json",
+      "count": 103,
+      "coverageRows": 103,
+      "types": {
+        "Flag / option": 92,
+        "Shell command": 9,
+        "Install": 2
+      },
+      "labels": {
+        "Tested (installed CLI --help, Linux sandbox)": 92,
+        "Tested (ran --help, Linux sandbox)": 9,
+        "Source-verified (official docs)": 2
+      },
+      "riskCount": 5,
+      "hiddenDescriptions": 0,
+      "method": "Installed from PyPI and ran --help recursively",
+      "version": "vibe 3.1.5",
+      "note": "",
+      "dateChecked": "2026-11-25"
+    },
+    {
+      "name": "Ollama",
+      "slug": "ollama",
+      "command": "ollama",
+      "file": "ollama.json",
+      "count": 32,
+      "coverageRows": 32,
+      "types": {
+        "Shell command": 32
+      },
+      "labels": {
+        "Source-verified (official docs)": 22,
+        "Source-verified (official source code)": 10
+      },
+      "riskCount": 3,
+      "hiddenDescriptions": 0,
+      "method": "Official docs (cli.mdx) + cobra command definitions in cmd/cmd.go",
+      "version": "docs snapshot 2026-11-23",
+      "note": "",
+      "dateChecked": "2026-11-25"
+    },
+    {
+      "name": "OpenClaw",
+      "slug": "openclaw",
+      "command": "openclaw",
+      "file": "openclaw.json",
+      "count": 1330,
+      "coverageRows": 1330,
+      "types": {
+        "Flag / option": 7,
+        "Shell command": 1323
+      },
+      "labels": {
+        "Source-verified (official docs)": 1330
+      },
+      "riskCount": 65,
+      "hiddenDescriptions": 0,
+      "method": "Official repo docs (docs/cli/**: usage blocks + global flags)",
+      "version": "docs snapshot 2026-11-25",
+      "note": "",
+      "dateChecked": "2026-11-25"
+    },
+    {
+      "name": "OpenCode",
+      "slug": "opencode",
+      "command": "opencode",
+      "file": "opencode.json",
+      "count": 138,
+      "coverageRows": 138,
+      "types": {
+        "Shell command": 55,
+        "Flag / option": 83
+      },
+      "labels": {
+        "Source-verified (official docs)": 138
+      },
+      "riskCount": 9,
+      "hiddenDescriptions": 0,
+      "method": "Official repo docs (cli.mdx)",
+      "version": "docs snapshot 2026-11-25",
+      "note": "",
+      "dateChecked": "2026-11-25"
+    },
+    {
+      "name": "Osaurus",
+      "slug": "osaurus",
+      "command": "osaurus",
+      "file": "osaurus.json",
+      "count": 64,
+      "coverageRows": 64,
+      "types": {
+        "Shell command": 63,
+        "Install": 1
+      },
+      "labels": {
+        "Source-verified (official docs)": 64
+      },
+      "riskCount": 4,
+      "hiddenDescriptions": 11,
+      "method": "Official docs CLI page. macOS-only app, cannot run in the Linux sandbox",
+      "version": "web docs 2026-11-25",
+      "note": "",
+      "dateChecked": "2026-11-25"
+    },
+    {
+      "name": "Qwen Code",
+      "slug": "qwen-code",
+      "command": "qwen",
+      "file": "qwen-code.json",
+      "count": 267,
+      "coverageRows": 267,
+      "types": {
+        "Shell command": 13,
+        "In-app slash command": 127,
+        "Flag / option": 127
+      },
+      "labels": {
+        "Source-verified (official docs)": 267
+      },
+      "riskCount": 4,
+      "hiddenDescriptions": 19,
+      "method": "Official repo docs (docs/users/**)",
+      "version": "docs snapshot 2026-11-25",
+      "note": "",
+      "dateChecked": "2026-11-25"
+    },
+    {
+      "name": "Windsurf",
+      "slug": "windsurf",
+      "command": "windsurf",
+      "file": "windsurf.json",
+      "count": 1,
+      "coverageRows": 1,
+      "types": {
+        "Shell command": 1
+      },
+      "labels": {
+        "Community-sourced (not tested)": 1
+      },
+      "riskCount": 0,
+      "hiddenDescriptions": 0,
+      "method": "No official CLI reference found (docs moved to docs.devin.ai). Only the editor launcher is documented, by a 3rd party",
+      "version": "n/a",
+      "note": "IDE-first, no official CLI reference",
+      "dateChecked": "2026-11-25"
+    },
+    {
+      "name": "ZCode",
+      "slug": "zcode",
+      "command": "zcode",
+      "file": "zcode.json",
+      "count": 24,
+      "coverageRows": 24,
+      "types": {
+        "Shell command": 24
+      },
+      "labels": {
+        "Source-verified (official docs)": 24
+      },
+      "riskCount": 3,
+      "hiddenDescriptions": 2,
+      "method": "Official repo usage docs (Chinese; descriptions written by me). Not run: needs pnpm build from source",
+      "version": "docs snapshot 2026-11-23",
+      "note": "ZCode is mainly a desktop app; CLI exists in zai-org/ZCode",
+      "dateChecked": "2026-11-25"
+    },
+    {
+      "name": "llama.cpp",
+      "slug": "llama-cpp",
+      "command": "llama-cli / llama-server",
+      "file": "llama-cpp.json",
+      "count": 477,
+      "coverageRows": 477,
+      "types": {
+        "Flag / option": 477
+      },
+      "labels": {
+        "Source-verified (official docs)": 477
+      },
+      "riskCount": 0,
+      "hiddenDescriptions": 0,
+      "method": "Official repo docs (tools/cli + tools/server README tables)",
+      "version": "docs snapshot 2026-11-25",
+      "note": "",
+      "dateChecked": "2026-11-25"
+    },
+    {
+      "name": "llm (Simon Willison)",
+      "slug": "llm",
+      "command": "llm",
+      "file": "llm.json",
+      "count": 210,
+      "coverageRows": 210,
+      "types": {
+        "Flag / option": 152,
+        "Shell command": 57,
+        "Install": 1
+      },
+      "labels": {
+        "Tested (installed CLI --help, Linux sandbox)": 152,
+        "Tested (ran --help, Linux sandbox)": 57,
+        "Source-verified (official docs)": 1
+      },
+      "riskCount": 8,
+      "hiddenDescriptions": 3,
+      "method": "Installed from PyPI and ran --help recursively",
+      "version": "llm, version 0.38",
+      "note": "",
+      "dateChecked": "2026-11-25"
+    }
+  ]
+}
